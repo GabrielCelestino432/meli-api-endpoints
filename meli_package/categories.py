@@ -1,5 +1,4 @@
 import requests as rq
-import json
 
 
 
@@ -31,7 +30,7 @@ def categoriesAttributes(access_token, category_id):
     data = rq.get(url, headers=header).json()
     return data
 
-def classifiedPromotionPacks(access_token, catergory_id):
+def classifiedPromotionPacks(access_token, category_id):
     r'''
         Obtém packs de promoções classificadas por categorias.
     '''

@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.1' 
+VERSION = '0.0.5' 
 DESCRIPTION = 'Pacote para conexão com a API do Mercado Livre'
 LONG_DESCRIPTION = 'Pacote em Python trazendo conexões fáceis com os endpoints da API do Mercado Livre'
 
@@ -13,7 +13,7 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
-    install_requires=['requests', 'json'],
+    install_requires=['requests'],
 
     keywords=['python', 'mercadolivre', 'meli'],
     classifiers= [
@@ -22,6 +22,5 @@ setup(
         "Programming Language :: Python :: 3",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
-        "Operating System :: Linux", 
     ]
 )

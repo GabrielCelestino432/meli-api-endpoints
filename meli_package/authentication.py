@@ -1,11 +1,7 @@
 import requests as rq
-import json as json_file
 import environs
 import webbrowser as web
 import sys
-
-# file = open('access.json')
-# access = json_file.load(file)
 
 def authentication(code=False, refresh_token=False):
     env = environs.Env()
