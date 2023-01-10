@@ -28,7 +28,7 @@ def itemKeywordSearch(access_token, site_id, keywords):
     return data
 
 
-def itemNicknameSearch(access_token, site_id, nickname):
+def nicknameSearch(access_token, site_id, nickname):
     r'''
         Obter itens das listagens por nickname.
     '''
@@ -41,7 +41,7 @@ def itemNicknameSearch(access_token, site_id, nickname):
     return data
 
 
-def itemSellerIdSearch(access_token, site_id, seller_id):
+def sellerIdSearch(access_token, site_id, seller_id):
     r'''
         Permite listar itens por vendedor.
     '''
@@ -54,7 +54,7 @@ def itemSellerIdSearch(access_token, site_id, seller_id):
     return data
 
 
-def itemSellerIdCategorySearch(access_token, site_id, seller_id, category_id):
+def sellerIdCategorySearch(access_token, site_id, seller_id, category_id):
     r'''
         Obter itens das listagens por vendedor numa categoria específica.  
     '''
@@ -67,7 +67,7 @@ def itemSellerIdCategorySearch(access_token, site_id, seller_id, category_id):
     return data
 
 
-def itemUserIdSearch(access_token, user_id):
+def userIdSearch(access_token, user_id):
     r'''
         Permite listar todos os itens da conta de um vendedor.    
     '''
@@ -96,7 +96,7 @@ def itemMultiget(access_token, itens):
     return data
 
 
-def itemUserMultiget(access_token, users):
+def userMultiget(access_token, users):
     r'''
         Multiget com múltiplos números de usário.  
     '''
@@ -112,7 +112,7 @@ def itemUserMultiget(access_token, users):
     return data
 
 
-def itemSearchScan(access_token, user_id):
+def userSearchScan(access_token, user_id):
     r'''
         Permite obter mais de 1000 itens correspondentes a um usuário.
     '''
