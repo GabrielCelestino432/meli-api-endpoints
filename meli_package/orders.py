@@ -12,8 +12,10 @@ def sellerOrders(access_token, seller_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def orderInfo(access_token, seller_id, order_id):
@@ -25,8 +27,10 @@ def orderInfo(access_token, seller_id, order_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def buyerOrders(access_token, buyer_id):
@@ -38,8 +42,10 @@ def buyerOrders(access_token, buyer_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Beare {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def paymentInfo(access_token, payment_id):
@@ -51,8 +57,10 @@ def paymentInfo(access_token, payment_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def paymentMethods(access_token, site_id):
@@ -64,8 +72,10 @@ def paymentMethods(access_token, site_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}' 
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def paymentMethodDetail(access_token, site_id, payment_method_id):
@@ -77,8 +87,10 @@ def paymentMethodDetail(access_token, site_id, payment_method_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def orderFeedback(access_token, order_id):
@@ -90,8 +102,10 @@ def orderFeedback(access_token, order_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def orderBlacklist(access_token, seller_id):
@@ -103,8 +117,10 @@ def orderBlacklist(access_token, seller_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def orderProducts(access_token, order_id):
@@ -116,7 +132,9 @@ def orderProducts(access_token, order_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 

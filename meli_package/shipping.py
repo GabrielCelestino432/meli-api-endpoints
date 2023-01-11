@@ -12,8 +12,10 @@ def shipmentInfo(access_token, shipment_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemShippingOption(access_token, item_id):
@@ -25,8 +27,10 @@ def itemShippingOption(access_token, item_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def siteShipmentMethods(access_token, site_id):
@@ -38,8 +42,10 @@ def siteShipmentMethods(access_token, site_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def catergoryShipment(access_token, cust_id, category_id):
@@ -51,8 +57,10 @@ def catergoryShipment(access_token, cust_id, category_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def userShippingPreferences(access_token, cust_id):
@@ -64,8 +72,10 @@ def userShippingPreferences(access_token, cust_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def orderShipments(access_token, order_id):
@@ -77,8 +87,10 @@ def orderShipments(access_token, order_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def shipmentLabels(access_token, shipment_id):
@@ -90,8 +102,10 @@ def shipmentLabels(access_token, shipment_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def printShipmentLabelZPL(access_token, shipment_id):
@@ -103,8 +117,10 @@ def printShipmentLabelZPL(access_token, shipment_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def printShipmentPDF(access_token, shipment_id):
@@ -116,5 +132,7 @@ def printShipmentPDF(access_token, shipment_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson

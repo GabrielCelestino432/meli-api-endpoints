@@ -18,7 +18,9 @@ def authentication(code=False, refresh_token=False):
             'client_secret': env('CLIENT_SECRET'),
             'refresh_token': refresh_token
         }
-        accessJson = rq.post(refresh_url, headers=header, data=data).json()
+        access = rq.post(refresh_url, headers=header, data=data)
+        accessJson = access.json()
+        access.close()
         return accessJson
 
     if code:
@@ -34,7 +36,9 @@ def authentication(code=False, refresh_token=False):
             'code': f'{code}',
             'redirect_uri': env('REDIRECT_URI')
         }
-        accessJson = rq.post(code_url, headers=header, data=data).json()
+        access = rq.post(code_url, headers=header, data=data)
+        accessJson = access.json()
+        access.close()
         return accessJson
     else:
         return 'Give at least one argument'

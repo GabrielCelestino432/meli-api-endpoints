@@ -12,8 +12,10 @@ def intervalDateUserVisit(access_token, user_id, date_from, date_to):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def timeWindowVisits(access_token, user_id, last, unit, ending):
@@ -25,8 +27,10 @@ def timeWindowVisits(access_token, user_id, last, unit, ending):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def intervalContactQuestion(access_token, user_id, date_from, date_to):
@@ -38,8 +42,10 @@ def intervalContactQuestion(access_token, user_id, date_from, date_to):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def timeWindowContactQuestions(access_token, user_id, last, unit):
@@ -51,8 +57,10 @@ def timeWindowContactQuestions(access_token, user_id, last, unit):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def intervalPhoneViews(access_token, user_id, date_from, date_to):
@@ -64,8 +72,10 @@ def intervalPhoneViews(access_token, user_id, date_from, date_to):
         'Content-Type': 'Application/JSON',
         'Authentication': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def timeWindowPhoneViews(access_token, user_id, last, unit):
@@ -77,8 +87,10 @@ def timeWindowPhoneViews(access_token, user_id, last, unit):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def timeWindowItemView(access_token, item_id, last, unit, ending):
@@ -90,5 +102,7 @@ def timeWindowItemView(access_token, item_id, last, unit, ending):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson

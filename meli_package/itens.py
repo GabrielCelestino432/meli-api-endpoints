@@ -11,8 +11,10 @@ def itemSearchCategory(access_token, site_id, category_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemKeywordSearch(access_token, site_id, keywords):
@@ -24,8 +26,10 @@ def itemKeywordSearch(access_token, site_id, keywords):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemNicknameSearch(access_token, site_id, nickname):
@@ -37,8 +41,10 @@ def itemNicknameSearch(access_token, site_id, nickname):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemSellerIdSearch(access_token, site_id, seller_id):
@@ -50,8 +56,10 @@ def itemSellerIdSearch(access_token, site_id, seller_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemSellerIdCategorySearch(access_token, site_id, seller_id, category_id):
@@ -63,8 +71,10 @@ def itemSellerIdCategorySearch(access_token, site_id, seller_id, category_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.post(url, headers=header).json()
-    return data
+    data = rq.post(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemUserIdSearch(access_token, user_id):
@@ -76,8 +86,10 @@ def itemUserIdSearch(access_token, user_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemMultiget(access_token, itens):
@@ -92,8 +104,10 @@ def itemMultiget(access_token, itens):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemUserMultiget(access_token, users):
@@ -108,8 +122,10 @@ def itemUserMultiget(access_token, users):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def itemSearchScan(access_token, user_id, scroll_id=None):
@@ -123,13 +139,17 @@ def itemSearchScan(access_token, user_id, scroll_id=None):
             'Content-type': 'Application/JSON',
             'Authorization': f'Bearer {access_token}' 
         }
-        data = rq.get(url, headers=header).json()
-        return data
+        data = rq.get(url, headers=header)
+        dataJson = data.json()
+        data.close()
+        return dataJson
 
     url = f'{global_url}/users/{user_id}/items/search?search_type=scan'
     header = {
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}' 
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson

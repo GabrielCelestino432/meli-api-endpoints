@@ -12,8 +12,10 @@ def userMe(access_token):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    user_data = rq.get(url, headers=header).json()
-    return user_data
+    user_data = rq.get(url, headers=header)
+    dataJson = user_data.json()
+    user_data.close()
+    return dataJson
 
 
 def user(access_token, user_id):
@@ -25,8 +27,10 @@ def user(access_token, user_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def userAddress(access_token, user_id):
@@ -38,8 +42,10 @@ def userAddress(access_token, user_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer f{access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def userPaymentMethods(access_token, user_id):
@@ -51,8 +57,10 @@ def userPaymentMethods(access_token, user_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def Application(access_token, application_id):
@@ -65,7 +73,9 @@ def Application(access_token, application_id):
         'Authorization': f'Bearer {access_token}'
     }
     data = rq.get(url, headers=header)
-    return data
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def userBrands(access_token, user_id):
@@ -78,7 +88,9 @@ def userBrands(access_token, user_id):
         'Authorization': f'Bearer {access_token}'
     }
     data = rq.get(url, headers=header)
-    return data
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def classifiedPromotionPacks(access_token, user_id, listing_type=False, category_id=False):
@@ -94,8 +106,10 @@ def classifiedPromotionPacks(access_token, user_id, listing_type=False, category
     if listing_type and category_id:
         url += f'/{listing_type}&CATEGORYID={category_id}'
 
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 def availableListingTypes(access_token, user_id, category_id):
     r'''
@@ -107,8 +121,10 @@ def availableListingTypes(access_token, user_id, category_id):
         'Authorization': f'Bearer {access_token}'
     }
 
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def listingTypesByID(access_token, user_id, listing_type_id, category_id):
@@ -120,8 +136,10 @@ def listingTypesByID(access_token, user_id, listing_type_id, category_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def ApplicationPermissions(access_token, user_id, application_id):
@@ -133,8 +151,10 @@ def ApplicationPermissions(access_token, user_id, application_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def myFeedApp(access_token, application_id):
@@ -146,5 +166,7 @@ def myFeedApp(access_token, application_id):
         'Content-type': 'ApplicationJSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson

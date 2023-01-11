@@ -12,8 +12,10 @@ def currencies(access_token):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def currencyInfo(access_token, currency_id):
@@ -25,8 +27,10 @@ def currencyInfo(access_token, currency_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def currencyConversion(access_token, currency_from, currency_to):
@@ -38,8 +42,10 @@ def currencyConversion(access_token, currency_from, currency_to):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 

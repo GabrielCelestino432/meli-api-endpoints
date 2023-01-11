@@ -13,8 +13,10 @@ def category(access_token, category_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def categoriesAttributes(access_token, category_id):
@@ -26,9 +28,11 @@ def categoriesAttributes(access_token, category_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
-    data = rq.get(url, headers=header).json()
-    return data
 
 def classifiedPromotionPacks(access_token, category_id):
     r'''
@@ -39,5 +43,7 @@ def classifiedPromotionPacks(access_token, category_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson

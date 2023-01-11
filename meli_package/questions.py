@@ -12,8 +12,10 @@ def questionItem(access_token, item_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def doQuestion(access_token, item_id, question_text):
@@ -29,8 +31,10 @@ def doQuestion(access_token, item_id, question_text):
         'text': f'{question_text}',
         'item_id': f'{item_id}'
     }
-    data = rq.post(url, headers=header, data=body).json()
-    return data
+    data = rq.post(url, headers=header, data=body)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def doAnswer(access_token, question_id, answer_text):
@@ -46,8 +50,10 @@ def doAnswer(access_token, question_id, answer_text):
         'question_id': f'{question_id}',
         'text': f'{answer_text}'
     }
-    data = rq.post(url, headers=header, data=body).json()
-    return data
+    data = rq.post(url, headers=header, data=body)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 def getQuestion(access_token, question_id):
     r'''
@@ -58,8 +64,10 @@ def getQuestion(access_token, question_id):
         'Content-Type': 'application/json',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def questionsBlacklist(access_token, seller_id, buyer_id):
@@ -71,8 +79,10 @@ def questionsBlacklist(access_token, seller_id, buyer_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def blockUser(access_token, seller_id, user_id):
@@ -87,8 +97,10 @@ def blockUser(access_token, seller_id, user_id):
     body = {
         'user_id': user_id
     }
-    data = rq.post(url, headers=header, data=body).json()
-    return data
+    data = rq.post(url, headers=header, data=body)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def deleteBlockedUser(access_token, seller_id, user_id):
@@ -100,8 +112,10 @@ def deleteBlockedUser(access_token, seller_id, user_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.delete(url, headers=header).json()
-    return data
+    data = rq.delete(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def receivedQuestion(access_token):
@@ -113,5 +127,7 @@ def receivedQuestion(access_token):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data 
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson

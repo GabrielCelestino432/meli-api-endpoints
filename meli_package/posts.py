@@ -13,8 +13,10 @@ def sites(access_token):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def siteDomains(access_token, site_domain_url):
@@ -26,8 +28,10 @@ def siteDomains(access_token, site_domain_url):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def siteListingTypes(access_token, site_id):
@@ -39,8 +43,10 @@ def siteListingTypes(access_token, site_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def listingExposures(access_token, site_id):
@@ -52,8 +58,10 @@ def listingExposures(access_token, site_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def listingPrices(access_token, site_id, price):
@@ -66,8 +74,10 @@ def listingPrices(access_token, site_id, price):
         'Authorization': f'Bearer {access_token}'
     }
 
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def listingCategories(access_token, site_id):
@@ -79,8 +89,10 @@ def listingCategories(access_token, site_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def domainDiscovery(access_token, site_id, q):
@@ -92,8 +104,10 @@ def domainDiscovery(access_token, site_id, q):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def listingTypeConfig(access_token, site_id, listing_type_id):
@@ -105,5 +119,7 @@ def listingTypeConfig(access_token, site_id, listing_type_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson

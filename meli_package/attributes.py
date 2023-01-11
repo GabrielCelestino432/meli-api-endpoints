@@ -12,8 +12,10 @@ def categoriesAttributes(access_token, category_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def technicalSpecsInput(access_token, category_id):
@@ -25,8 +27,10 @@ def technicalSpecsInput(access_token, category_id):
         'Content-Type': 'Application/JSON', 
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def technicalSpecsOutput(access_token, category_id):
@@ -38,8 +42,10 @@ def technicalSpecsOutput(access_token, category_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def conditionalAttributes(access_token, catergory_id):
@@ -51,8 +57,10 @@ def conditionalAttributes(access_token, catergory_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def incompleteTechnicalSpecs(access_token, user_id):
@@ -64,8 +72,10 @@ def incompleteTechnicalSpecs(access_token, user_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 def notApplicableAttribute(access_token, item_id):
     r'''
@@ -76,5 +86,7 @@ def notApplicableAttribute(access_token, item_id):
         'Content-Type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson

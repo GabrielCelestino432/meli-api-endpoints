@@ -11,8 +11,10 @@ def classifiedLocation(access_token):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def countryInfo(access_token, country_id):
@@ -24,8 +26,10 @@ def countryInfo(access_token, country_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def stateInfo(access_token, state_id):
@@ -37,8 +41,10 @@ def stateInfo(access_token, state_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def cityInfo(access_token, city_id):
@@ -50,8 +56,10 @@ def cityInfo(access_token, city_id):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def zipCodeInfo(access_token, country_id, zip_code):
@@ -63,8 +71,10 @@ def zipCodeInfo(access_token, country_id, zip_code):
         'Content-type': 'Application/JSON',
         'Authorization': f'Bearer {access_token}'
     }
-    data = rq.get(url, headers=header).json()
-    return data
+    data = rq.get(url, headers=header)
+    dataJson = data.json()
+    data.close()
+    return dataJson
 
 
 def zipCodeSearchBetween(access_token, country_id, zip_code_from, zip_code_to):
@@ -77,6 +87,8 @@ def zipCodeSearchBetween(access_token, country_id, zip_code_from, zip_code_to):
             'Authorization': f'Bearer {access_token}'
         }
         data = rq.get(url, headers=header)
-        return data
+        dataJson = data.json()
+        data.close()
+        return dataJson
 
 
