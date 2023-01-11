@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.5' 
+VERSION = '0.0.6' 
 DESCRIPTION = 'Pacote para conexão com a API do Mercado Livre'
 LONG_DESCRIPTION = 'Pacote em Python trazendo conexões fáceis com os endpoints da API do Mercado Livre'
 

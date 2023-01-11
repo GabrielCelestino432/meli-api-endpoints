@@ -1,5 +1,5 @@
 LICENSE
-pyproject.toml
+README.md
 setup.py
 meli_package/__init__.py
 meli_package/attributes.py

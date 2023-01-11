@@ -28,7 +28,7 @@ def itemKeywordSearch(access_token, site_id, keywords):
     return data
 
 
-def nicknameSearch(access_token, site_id, nickname):
+def itemNicknameSearch(access_token, site_id, nickname):
     r'''
         Obter itens das listagens por nickname.
     '''
@@ -41,7 +41,7 @@ def nicknameSearch(access_token, site_id, nickname):
     return data
 
 
-def sellerIdSearch(access_token, site_id, seller_id):
+def itemSellerIdSearch(access_token, site_id, seller_id):
     r'''
         Permite listar itens por vendedor.
     '''
@@ -54,7 +54,7 @@ def sellerIdSearch(access_token, site_id, seller_id):
     return data
 
 
-def sellerIdCategorySearch(access_token, site_id, seller_id, category_id):
+def itemSellerIdCategorySearch(access_token, site_id, seller_id, category_id):
     r'''
         Obter itens das listagens por vendedor numa categoria específica.  
     '''
@@ -67,7 +67,7 @@ def sellerIdCategorySearch(access_token, site_id, seller_id, category_id):
     return data
 
 
-def userIdSearch(access_token, user_id):
+def itemUserIdSearch(access_token, user_id):
     r'''
         Permite listar todos os itens da conta de um vendedor.    
     '''
@@ -96,7 +96,7 @@ def itemMultiget(access_token, itens):
     return data
 
 
-def userMultiget(access_token, users):
+def itemUserMultiget(access_token, users):
     r'''
         Multiget com múltiplos números de usário.  
     '''
@@ -112,10 +112,20 @@ def userMultiget(access_token, users):
     return data
 
 
-def userSearchScan(access_token, user_id):
+def itemSearchScan(access_token, user_id, scroll_id=None):
     r'''
-        Permite obter mais de 1000 itens correspondentes a um usuário.
+        Permite obter mais de 1000 itens
+         correspondentes a um usuário.
     '''
+    if scroll_id is not None:
+        url = f'{global_url}/users/{user_id}/items/search?search_type=scan&scroll_id={scroll_id}'
+        header = {
+            'Content-type': 'Application/JSON',
+            'Authorization': f'Bearer {access_token}' 
+        }
+        data = rq.get(url, headers=header).json()
+        return data
+
     url = f'{global_url}/users/{user_id}/items/search?search_type=scan'
     header = {
         'Content-type': 'Application/JSON',

@@ -112,10 +112,20 @@ def itemUserMultiget(access_token, users):
     return data
 
 
-def itemSearchScan(access_token, user_id):
+def itemSearchScan(access_token, user_id, scroll_id=None):
     r'''
-        Permite obter mais de 1000 itens correspondentes a um usuário.
+        Permite obter mais de 1000 itens
+         correspondentes a um usuário.
     '''
+    if scroll_id is not None:
+        url = f'{global_url}/users/{user_id}/items/search?search_type=scan&scroll_id={scroll_id}'
+        header = {
+            'Content-type': 'Application/JSON',
+            'Authorization': f'Bearer {access_token}' 
+        }
+        data = rq.get(url, headers=header).json()
+        return data
+
     url = f'{global_url}/users/{user_id}/items/search?search_type=scan'
     header = {
         'Content-type': 'Application/JSON',
